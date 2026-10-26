@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RECILAT TCO · Reciclaje de latas y papel de aluminio en Temuco</title>
+<meta name="description" content="Tambores metálicos gratuitos para reciclar latas y papel de aluminio en Temuco y sus alrededores. ¡Juntos por un planeta más limpio!">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg1:#f0fdf4;--bg2:#dcfce7;--ink:#134e27;--mute:#4b5563;--card:rgba(255,255,255,.9);--pri:#15803d;--pri2:#0b3318;--line:#dcfce7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#0f1d16;--bg2:#163222;--ink:#eef3e8;--mute:#b4c9b9;--card:rgba(18,38,27,.86);--pri:#2e9b5a;--line:rgba(238,243,232,.16)}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:400 1.05rem/1.6 "DM Sans",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.08;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
+h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:600}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid #f2b705;outline-offset:3px;border-radius:6px}
+#glow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:var(--g,0);background:radial-gradient(ellipse at 70% 40%,rgba(190,235,160,.55),transparent 60%),radial-gradient(ellipse at 20% 90%,rgba(120,200,120,.35),transparent 55%)}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+main,header{position:relative;z-index:2}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 5vw;background:var(--card);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{font:800 1.1rem Fraunces,serif;text-decoration:none;letter-spacing:.02em}.brand b{color:var(--pri)}
+.nav nav{display:none;gap:22px}.nav nav a{text-decoration:none;font-weight:500;font-size:.95rem}.nav nav a:hover{color:var(--pri)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.pri{background:var(--pri);color:#fff;box-shadow:0 8px 24px -8px rgba(31,122,67,.7)}.pri:hover{background:#18633a}
+.sec{border-color:var(--ink);background:transparent}.sec:hover{background:var(--ink);color:var(--bg1)}
+.sm{min-height:40px;padding:8px 18px;font-size:.92rem}
+.sc{min-height:100svh;display:flex;align-items:center;padding:90px 6vw 70px;position:relative}
+.t{max-width:540px}
+.top{align-items:flex-start}
+.panel{background:var(--card);backdrop-filter:blur(8px);border-radius:24px;padding:22px}
+.eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pri)}
+.lead{font-size:1.15rem;color:var(--mute)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.4em}
+.scroll{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);transition:opacity .4s}
+.scroll span{width:22px;height:36px;border:2px solid currentColor;border-radius:12px;position:relative}
+.scroll span::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:currentColor;animation:wh 1.6s infinite}
+@keyframes wh{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.wide{width:100%;max-width:1100px;margin:0 auto}
+.head{max-width:620px;margin-bottom:1.6em}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+.card{background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:24px;padding:26px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(0,0,0,.45)}
+.card p{color:var(--mute);margin:0}
+.ic{width:60px;height:60px;color:var(--pri);margin-bottom:14px;animation:fl 4s ease-in-out infinite}
+.n{font:800 .85rem "DM Sans";letter-spacing:.14em;color:var(--pri);display:block;margin-bottom:6px}
+@keyframes fl{50%{transform:translateY(-5px)}}
+.cta-sc{justify-content:center;text-align:center}
+.cta-sc .t{max-width:680px;margin:0 auto}.cta-sc .cta{justify-content:center}
+.info{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin:1.6em 0 1em;color:var(--mute)}
+.slogan{font:600 1.4rem Fraunces,serif;color:var(--pri)}
+.fb{display:none}
+.nogl .fb,.static .fb{display:block;position:absolute;right:6vw;bottom:12vh;width:min(38vw,260px)}
+.nogl #gl{display:none}
+footer{padding:20px 6vw 30px;text-align:center;font-size:.85rem;color:var(--mute);position:relative;z-index:2}
+@media(min-width:800px){.nav nav{display:flex}.grid{grid-template-columns:repeat(3,1fr)}.panel{background:none;backdrop-filter:none;padding:0;border-radius:0}.t{padding-left:2vw}}
+@media(max-width:799px){.fb{display:none!important}}
+body,h1,h2,h3,.brand,.slogan,.n{font-family:"Plus Jakarta Sans",system-ui,sans-serif}
+h1,h2{letter-spacing:-.02em}
+.wa{background:#25d366;color:#073b1a;box-shadow:0 8px 24px -8px rgba(37,211,102,.8)}.wa:hover{background:#1fbd5a}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.chip{display:inline-block;padding:5px 12px;border-radius:999px;background:#dcfce7;color:#134e27;font-weight:700;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase}
+.chip.lime{background:#84cc16;color:#0b3318}
+.n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--pri);color:#fff;font-size:1rem;letter-spacing:0}
+.lnk{display:inline-block;margin-top:14px;padding:6px 0;font-weight:700;color:var(--pri);text-decoration:none}.lnk:hover{text-decoration:underline}
+.plain{min-height:0;padding:56px 6vw}
+.mat{border-left:4px solid #16a34a}.mat .chip{margin-top:12px}
+.warn{margin-top:16px;border-radius:20px;background:#134e27;color:#fff;padding:20px 24px;text-align:center}.warn strong{display:block;font-size:1.05rem;color:#bef264;text-transform:uppercase;letter-spacing:.02em}.warn span{opacity:.9}
+.mm{position:relative}.mm summary{list-style:none;cursor:pointer;min-height:44px;display:grid;place-items:center;padding:0 14px;border:1px solid var(--line);border-radius:12px;font-weight:700;font-size:.9rem}.mm summary::-webkit-details-marker{display:none}
+.mp{position:absolute;right:0;top:52px;display:grid;min-width:210px;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 14px 34px -8px rgba(11,51,24,.25)}.mp a{padding:12px 14px;text-decoration:none;font-weight:600;border-radius:10px}.mp a:hover{background:#dcfce7}
+.nav>.btn.wa{display:none}
+.bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:6;box-shadow:0 14px 34px -4px rgba(11,51,24,.3)}
+@media(min-width:800px){.g2{grid-template-columns:1fr 1fr}.mm,.bar{display:none}.nav>.btn.wa{display:inline-flex}}
+@media(max-width:799px){footer{padding-bottom:96px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header class="nav">
+  <a class="brand" href="#inicio">RECILAT <b>TCO</b></a>
+  <nav aria-label="Principal"><a href="#como">Cómo funciona</a><a href="#para">Para quién</a><a href="#beneficios">Beneficios</a><a href="#aceptamos">Qué aceptamos</a><a href="#contacto">Contacto</a></nav>
+  <a class="btn wa sm" data-wa href="https://wa.me/56962042769">WhatsApp</a>
+  <details class="mm"><summary aria-label="Abrir menú">☰ Menú</summary><div class="mp"><a href="#como">Cómo funciona</a><a href="#para">Para quién</a><a href="#beneficios">Beneficios</a><a href="#aceptamos">Qué aceptamos</a><a href="#contacto">Contacto</a></div></details>
+</header>
+<main>
+<section id="inicio" data-s class="sc top">
+  <div class="t panel">
+    <p class="chips rv"><span class="chip">Cobertura en Temuco y alrededores</span><span class="chip lime">Contenedor 100 % gratuito</span></p>
+    <h1 class="rv">Dale una nueva vida al aluminio.</h1>
+    <p class="lead rv">Reciclamos latas y papel de aluminio para construir un entorno más limpio en Temuco y sus alrededores.</p>
+    <div class="cta rv"><a class="btn pri" data-wa href="https://wa.me/56962042769">Quiero reciclar</a><a class="btn sec" href="#como">Conoce cómo funciona</a></div>
+  </div>
+  <svg class="fb" viewBox="0 0 200 260" role="img" aria-label="Tambor metálico verde de RECILAT TCO"><ellipse cx="100" cy="236" rx="80" ry="12" fill="#000" opacity=".15"/><rect x="25" y="30" width="150" height="200" rx="14" fill="#1f7a43"/><ellipse cx="100" cy="30" rx="75" ry="16" fill="#0f3d26"/><ellipse cx="100" cy="30" rx="75" ry="16" fill="none" stroke="#b9c2c4" stroke-width="4"/><text x="100" y="135" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#fff">RECILAT</text><text x="100" y="160" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#bff0c4">TCO</text></svg>
+  <div class="scroll" aria-hidden="true"><span></span>Desliza</div>
+</section>
+
+<section data-s class="sc top">
+  <div class="t panel">
+    <p class="eyebrow rv">El recorrido de una lata</p>
+    <h2 class="rv">Cada lata cuenta.</h2>
+    <p class="lead rv">Pequeñas acciones pueden generar grandes cambios cuando las hacemos en comunidad.</p>
+  </div>
+</section>
+
+<section id="como" data-s class="sc">
+  <div class="wide">
+    <div class="head"><p class="eyebrow rv">Cómo funciona</p><h2 class="rv">Reciclar es simple.</h2></div>
+    <div class="grid">
+      <article class="card rv"><svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="14" rx="18" ry="6"/><path d="M14 14v34c0 3.3 8 6 18 6s18-2.7 18-6V14"/><path d="M14 28c0 3.3 8 6 18 6s18-2.700 18-6"/></svg><span class="n">1</span><h3>Solicita tu tambor.</h3><p>Coordinamos contigo la instalación de un contenedor metálico gratuito.</p></article>
+      <article class="card rv"><svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="20" y="14" width="24" height="40" rx="5"/><path d="M20 24h24M20 44h24M26 10h12M32 4v6"/></svg><span class="n">2</span><h3>Junta tus reciclables.</h3><p>Deposita las latas y el papel de aluminio aceptados en el contenedor, siguiendo las indicaciones que entreguemos.</p></article>
+      <article class="card rv"><svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a22 22 0 0 1 38-6M52 42a22 22 0 0 1-38 6"/><path d="M52 6v10H42M12 58V48h10"/></svg><span class="n">3</span><h3>Coordinamos el retiro.</h3><p>Nos contactas y organizamos la recogida del material acumulado.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="para" data-s class="sc">
+  <div class="wide">
+    <div class="head"><p class="eyebrow rv">Para comunidades y negocios</p><h2 class="rv">Reciclar es más fácil cuando es de todos.</h2></div>
+    <div class="grid">
+      <article class="card rv"><svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M10 58V20l14-8v46M24 58V8l30 12v38M6 58h52M32 26h6M32 36h6M32 46h6M44 30h4M44 40h4"/></svg><h3>Condominios y comunidades</h3><p>Incorpora el reciclaje de latas y papel de aluminio en los espacios compartidos de tu comunidad.</p><a class="lnk" data-wa data-m="Hola RECILAT TCO, quisiera solicitar un contenedor gratuito para un condominio en Temuco." href="https://wa.me/56962042769">Pedir para mi condominio →</a></article>
+      <article class="card rv"><svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M14 18h26v34a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4zM40 24h6a6 6 0 0 1 0 14h-6M14 18c0-6 8-6 8-10 0 4 8 4 8 0 0 4 10 4 10 10"/></svg><h3>Pubs y establecimientos</h3><p>Facilita la recolección de latas en tu local y súmate a una iniciativa de reciclaje colectivo.</p><a class="lnk" data-wa data-m="Hola RECILAT TCO, administro un pub o local en Temuco y me gustaría sumar el contenedor." href="https://wa.me/56962042769">Pedir para mi pub o local →</a></article>
+      <article class="card rv"><svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="24" r="16"/><path d="M32 40v18M22 58h20M32 48l8-8M32 44l-8-8"/></svg><h3>Parques y organizaciones</h3><p>Promueve la colaboración comunitaria para mantener plazas y áreas verdes más limpias.</p><a class="lnk" data-wa data-m="Hola RECILAT TCO, quisiera consultar por un contenedor para un espacio público o parque." href="https://wa.me/56962042769">Pedir para mi espacio público →</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" class="sc plain"><div class="wide"><div class="head"><p class="eyebrow rv">Beneficios para tu comunidad</p><h2 class="rv">Un sistema limpio, ordenado y sin costo para ti.</h2></div><div class="grid"><article class="card rv"><h3>Contenedores gratuitos</h3><p>Facilitamos un contenedor metálico para depositar latas y papel de aluminio, sin costo.</p></article><article class="card rv"><h3>Retiro del material</h3><p>RECILAT TCO coordina el retiro del material recolectado para su posterior reciclaje.</p></article><article class="card rv"><h3>Colaboración ambiental</h3><p>Ayudas a que el aluminio tenga una nueva vida y a mantener tu entorno más limpio.</p></article></div></div></section>
+
+<section id="aceptamos" class="sc plain"><div class="wide"><div class="head"><p class="eyebrow rv">Clasificación</p><h2 class="rv">Qué aceptamos en el contenedor.</h2><p class="lead rv">Un solo contenedor para estos dos materiales.</p></div><div class="grid g2"><article class="card mat rv"><h3>Latas de bebidas</h3><p>Latas de aluminio de cervezas, jugos y gaseosas.</p><span class="chip lime">Aluminio</span></article><article class="card mat rv"><h3>Papel de aluminio</h3><p>Papel de aluminio usado.</p><span class="chip lime">Aluminio</span></article></div><div class="warn rv"><strong>Solo latas y papel aluminio en un solo contenedor</strong><span>Te compartimos las indicaciones para depositar el material.</span></div><p class="rv"><a class="lnk" data-wa data-m="Hola, tengo una duda sobre un material de reciclaje." href="https://wa.me/56962042769">¿Dudas con un material? Pregúntanos por WhatsApp →</a></p></div></section>
+
+<section data-s class="sc top">
+  <div class="t panel">
+    <p class="eyebrow rv">El resultado de reciclar</p>
+    <h2 class="rv">Un cambio pequeño. Un futuro más limpio.</h2>
+    <p class="lead rv">Cuando reciclamos juntos, hacemos que nuestras comunidades avancen hacia un entorno más limpio.</p>
+  </div>
+</section>
+
+<section id="contacto" data-s class="sc cta-sc">
+  <div class="t panel">
+    <h2 class="rv">Démosle una nueva vida al aluminio.</h2>
+    <p class="lead rv">¿Quieres implementar un punto de reciclaje en tu comunidad o negocio? Conversemos.</p>
+    <div class="cta rv"><a class="btn wa" data-wa href="https://wa.me/56962042769">Contactar por WhatsApp</a></div>
+    <p class="info rv"><span>✉ <a href="mailto:recilattco@gmail.com">recilattco@gmail.com</a></span><span>📞 <a href="tel:+56962042769">+56 9 6204 2769</a></span><span>📍 Temuco y alrededores, Chile</span><span>Facebook: Recilat Tco</span></p>
+    <p class="slogan rv">¡Juntos por un planeta más limpio!</p>
+  </div>
+</section>
+</main>
+<footer><strong>RECILAT TCO</strong> · Empresa recicladora de latas y papel de aluminio<br>© 2026 RECILAT TCO · Temuco y alrededores, Chile</footer>
+<a class="btn wa bar" data-wa data-m="Hola, RECILAT TCO. Quiero solicitar un contenedor gratuito." href="https://wa.me/56962042769">Pedir contenedor gratis por WhatsApp</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(()=>{
+const MSG="Hola, quiero reciclar con RECILAT TCO. Me gustaría información sobre un tambor gratuito para mi comunidad o negocio en Temuco.";
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href="https://wa.me/56962042769?text="+encodeURIComponent(a.dataset.m||MSG);a.target="_blank";a.rel="noopener"});
+document.querySelectorAll(".mp a").forEach(a=>a.addEventListener("click",()=>a.closest("details").removeAttribute("open")));
+const root=document.documentElement,reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,mobile=innerWidth<800;
+let ok=!!(window.THREE&&window.THREE.GLTFLoader&&window.gsap&&window.ScrollTrigger);
+try{const c=document.createElement("canvas");ok=ok&&!!(c.getContext("webgl")||c.getContext("experimental-webgl"))}catch(e){ok=false}
+if(!ok){root.classList.add("nogl");return}
+gsap.registerPlugin(ScrollTrigger);
+if(!reduce)gsap.utils.toArray(".rv").forEach(el=>gsap.from(el,{y:30,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%",toggleActions:"play none none reverse"}}));
+
+const cv=document.getElementById("gl");
+const R=new THREE.WebGLRenderer({canvas:cv,antialias:!mobile,alpha:true,powerPreference:"low-power"});
+R.setPixelRatio(Math.min(devicePixelRatio,mobile?1.5:2));
+R.outputEncoding=THREE.sRGBEncoding;
+const S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(mobile?42:34,1,.1,60);
+// entorno sintético para reflejos metálicos (sin archivos externos)
+(()=>{const c=document.createElement("canvas");c.width=256;c.height=128;const x=c.getContext("2d");
+const g=x.createLinearGradient(0,0,0,128);g.addColorStop(0,"#fffaf0");g.addColorStop(.5,"#d9e6cf");g.addColorStop(1,"#2f6a42");x.fillStyle=g;x.fillRect(0,0,256,128);
+x.fillStyle="rgba(255,255,255,.9)";x.fillRect(30,20,50,34);x.fillRect(150,26,70,22);
+const t=new THREE.CanvasTexture(c);t.mapping=THREE.EquirectangularReflectionMapping;t.encoding=THREE.sRGBEncoding;
+const pm=new THREE.PMREMGenerator(R);S.environment=pm.fromEquirectangular(t).texture;t.dispose();pm.dispose()})();
+S.add(new THREE.HemisphereLight(0xfff4dc,0x3f7a4a,.7));
+const key=new THREE.DirectionalLight(0xffffff,1.2);key.position.set(4,7,5);S.add(key);
+
+const world=new THREE.Group();S.add(world);
+const drum=new THREE.Group();world.add(drum);
+function recy(x,cx,cy,r,col){x.save();x.translate(cx,cy);x.strokeStyle=x.fillStyle=col;x.lineWidth=r*.24;x.lineCap="round";
+for(let k=0;k<3;k++){x.save();x.rotate(k*2.094);x.beginPath();x.arc(0,0,r,-1.95,-.45);x.stroke();
+const a=-.35;x.translate(r*Math.cos(a),r*Math.sin(a));x.rotate(a+Math.PI);x.beginPath();x.moveTo(0,-r*.34);x.lineTo(r*.3,r*.1);x.lineTo(-r*.3,r*.1);x.fill();x.restore()}x.restore()}
+const W=2048,HT=944,lc=document.createElement('canvas');lc.width=W;lc.height=HT;
+function leaf(x,px,py,a,len,col){x.save();x.translate(px,py);x.rotate(a);x.fillStyle=col;x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(len*.4,-len*.22,len,0);x.quadraticCurveTo(len*.4,len*.22,0,0);x.fill();x.restore()}
+function canI(x,cx,cy,w,h,r){x.save();x.translate(cx,cy);x.rotate(r);x.lineWidth=6;x.strokeStyle='#fff';x.fillStyle='rgba(255,255,255,.14)';x.beginPath();x.rect(-w/2,-h/2,w,h);x.fill();x.stroke();x.beginPath();x.ellipse(0,-h/2,w/2,w*.16,0,0,7);x.fill();x.stroke();x.lineWidth=3;x.beginPath();x.ellipse(0,-h/2,w*.3,w*.08,0,0,7);x.stroke();x.lineWidth=5;x.globalAlpha=.6;x.beginPath();x.moveTo(-w*.25,-h*.3);x.lineTo(-w*.25,h*.3);x.stroke();x.restore()}
+(()=>{const x=lc.getContext('2d'),g=x.createLinearGradient(0,0,0,HT);g.addColorStop(0,'#15843a');g.addColorStop(1,'#0a5226');x.fillStyle=g;x.fillRect(0,0,W,HT);
+const F=s=>`900 ${s}px Arial Black, Arial, sans-serif`;
+[512,1536].forEach(cx=>{
+[-1,1].forEach(s=>{for(let k=0;k<7;k++){const t=k/6,px=cx+s*(255+16*Math.sin(t*4)),py=120+t*340,u=k%2;leaf(x,px,py,s>0?-1.1:-Math.PI+1.1,95,u?'#59c02c':'#82d93f');leaf(x,px,py,s>0?-2:-Math.PI+2,80,u?'#82d93f':'#59c02c')}
+for(let k=0;k<4;k++){const px=cx+s*(225-k*8),py=565+k*48;leaf(x,px,py,s>0?-1:-Math.PI+1,70,'#6ccc33');leaf(x,px,py,s>0?-2.1:-Math.PI+2.1,60,'#4fb82a')}});
+recy(x,cx,175,66,'#fff');
+x.font=F(110);let a=x.measureText('RECILAT ').width,b=x.measureText('TCO').width;const fs=Math.floor(110*Math.min(1,500/(a+b)));x.font=F(fs);a=x.measureText('RECILAT ').width;b=x.measureText('TCO').width;
+const sx=cx-(a+b)/2;x.textAlign='left';x.fillStyle='#fff';x.fillText('RECILAT ',sx,330);x.fillStyle='#8fe05a';x.fillText('TCO',sx+a,330);
+x.textAlign='center';x.fillStyle='#fff';x.font='800 40px Arial, sans-serif';x.fillText('EMPRESA RECICLADORA',cx,392);x.fillText('DE LATAS Y ALUMINIO',cx,438);
+canI(x,cx-52,545,70,110,0);canI(x,cx+58,552,70,110,.45);
+x.font='italic 700 54px Arial, sans-serif';x.fillText('¡Juntos por un',cx,672);x.fillText('planeta más limpio!',cx,730);
+x.strokeStyle='#6ccc33';x.lineWidth=7;x.beginPath();x.moveTo(cx-230,758);x.lineTo(cx+230,758);x.stroke();
+canI(x,cx-255,832,26,46,0);x.textAlign='left';x.font='700 24px Arial, sans-serif';x.fillText('Solo latas',cx-225,826);x.fillText('y aluminio',cx-225,856);
+x.strokeStyle='rgba(255,255,255,.35)';x.lineWidth=3;[-108,108].forEach(d=>{x.beginPath();x.moveTo(cx+d,800);x.lineTo(cx+d,868);x.stroke()});
+recy(x,cx,834,28,'#6ccc33');leaf(x,cx+128,850,-1.1,48,'#8fe05a');x.fillText('Damos una',cx+168,818);x.fillText('nueva vida',cx+168,846);x.fillText('a las latas',cx+168,874)});
+})();
+const lt=new THREE.CanvasTexture(lc);lt.encoding=THREE.sRGBEncoding;lt.anisotropy=4;
+const H=2.9,lidY=H/2-.07;
+const metal=new THREE.MeshStandardMaterial({color:0xd5dadc,metalness:1,roughness:.22});
+// --- tambor real (modelo glTF descargado) pintado para igualar el tambor físico de la foto ---
+const loader=new THREE.GLTFLoader();
+loader.load('stainless_steel_oil_drum.glb',gltf=>{
+ const root=gltf.scene;root.updateMatrixWorld(true);
+ let mesh=null;root.traverse(o=>{if(o.isMesh)mesh=o});
+ if(!mesh)return;
+ const geo=mesh.geometry;geo.computeBoundingBox();
+ const bb=geo.boundingBox,zMin=bb.min.z,zMax=bb.max.z,zR=zMax-zMin;
+ const pos=geo.attributes.position,n=pos.count,colors=new Float32Array(n*3);
+ // el eje "alto" del modelo es Z: Z máx = tapa, Z mín = base. Pintamos por altura:
+ const green=new THREE.Color(0x15843a),dark=new THREE.Color(0x0a3c1c),silver=new THREE.Color(0xd7dbdc),tmp=new THREE.Color();
+ const topT=zMax-zR*.12,botT=zMin+zR*.035,smo=x=>{x=Math.min(1,Math.max(0,x));return x*x*(3-2*x)};
+ for(let i=0;i<n;i++){const z=pos.getZ(i);
+  if(z>topT)tmp.copy(green).lerp(silver,smo((z-topT)/(zMax-topT))); // tapa/boquillas metálicas
+  else if(z<botT)tmp.copy(green).lerp(dark,smo((botT-z)/(botT-zMin))); // base
+  else tmp.copy(green); // cuerpo pintado verde
+  colors[i*3]=tmp.r;colors[i*3+1]=tmp.g;colors[i*3+2]=tmp.b}
+ geo.setAttribute('color',new THREE.BufferAttribute(colors,3));
+ mesh.material=new THREE.MeshStandardMaterial({vertexColors:true,normalMap:mesh.material.normalMap,normalScale:new THREE.Vector2(.5,.5),metalness:.45,roughness:.4});
+ // centra y escala para que ocupe el mismo espacio que el tambor anterior.
+ // OJO: la propia jerarquía del glTF (viene de un FBX de Sketchfab) ya trae su
+ // corrección Z-up -> Y-up "horneada" en sus nodos, así que NO hay que rotar manualmente:
+ // root.updateMatrixWorld ya deja el modelo parado y Box3 ya lee esa orientación correcta.
+ const box=new THREE.Box3().setFromObject(root),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());
+ root.position.sub(center);
+ const wrap=new THREE.Group();wrap.add(root);wrap.scale.setScalar(H/size.y);
+ drum.add(wrap);
+},undefined,()=>{});
+// etiqueta envolvente (el diseño real de RECILAT TCO), deja asomar el metal del modelo arriba/abajo
+drum.add(new THREE.Mesh(new THREE.CylinderGeometry(.965,.965,H*.88,64,1,true),new THREE.MeshPhysicalMaterial({map:lt,metalness:.3,roughness:.32,clearcoat:.7,clearcoatRoughness:.15})).translateY(-H*.02));
+// tapa circular con pestaña: se abre con el scroll
+const cap=new THREE.Group();cap.position.set(0,lidY+.025,-.33);drum.add(cap);
+const disc=new THREE.Mesh(new THREE.CylinderGeometry(.36,.36,.03,40),new THREE.MeshStandardMaterial({color:0xeef1f2,metalness:.9,roughness:.3}));disc.position.z=.33;cap.add(disc);
+const tab=new THREE.Mesh(new THREE.BoxGeometry(.14,.012,.1),metal);tab.position.set(.26,.015,.55);tab.rotation.y=.5;cap.add(tab);
+// etiqueta superior
+const tc=document.createElement('canvas');tc.width=500;tc.height=400;
+(()=>{const x=tc.getContext('2d');x.fillStyle='#0e6a2c';x.fillRect(0,0,500,400);
+[[60,220,-1.1],[440,220,-Math.PI+1.1],[70,290,-1.9],[430,290,-Math.PI+1.9]].forEach(([px,py,a])=>leaf(x,px,py,a,80,'#6ccc33'));
+recy(x,250,75,34,'#fff');x.textAlign='center';x.fillStyle='#fff';x.font='900 82px Arial Black, Arial, sans-serif';x.fillText('RECILAT',250,185);x.fillStyle='#8fe05a';x.fillText('TCO',250,262);
+x.fillStyle='#fff';x.fillRect(70,300,360,56);x.fillStyle='#0e5a26';x.font='800 28px Arial, sans-serif';x.fillText('SOLO LATAS Y ALUMINIO',250,338)})();
+const tt=new THREE.CanvasTexture(tc);tt.encoding=THREE.sRGBEncoding;
+const stk=new THREE.Mesh(new THREE.PlaneGeometry(.64,.51),new THREE.MeshStandardMaterial({map:tt,roughness:.4,metalness:.2}));stk.rotation.x=-Math.PI/2;stk.position.set(0,lidY+.006,-.6);drum.add(stk);
+// sombra de contacto
+const sc=document.createElement("canvas");sc.width=sc.height=128;const sx=sc.getContext("2d"),sg=sx.createRadialGradient(64,64,4,64,64,64);sg.addColorStop(0,"rgba(0,0,0,.35)");sg.addColorStop(1,"rgba(0,0,0,0)");sx.fillStyle=sg;sx.fillRect(0,0,128,128);
+const sh=new THREE.Mesh(new THREE.PlaneGeometry(5,5),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc),transparent:true,depthWrite:false}));sh.rotation.x=-Math.PI/2;sh.position.y=-H/2-.01;world.add(sh);
+
+// latas (modelo glTF real: lata_para_mockups.glb), pintadas por vértice en 3 tonos verdes
+const N=mobile?8:14,cans=[];
+const canLoader=new THREE.GLTFLoader();
+canLoader.load('lata_para_mockups.glb',gltf=>{
+ const tmpl=gltf.scene;tmpl.updateMatrixWorld(true);
+ // igual que el tambor: la jerarquía del glTF ya viene con su Y-up/escala correctos, sin rotar a mano
+ const box=new THREE.Box3().setFromObject(tmpl),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());
+ tmpl.position.sub(center);
+ const scl=.5/size.y; // misma altura visual que la lata procedural anterior
+ const metalMat=new THREE.MeshStandardMaterial({color:0xdfe5e6,metalness:1,roughness:.2});
+ const labelMat=new THREE.MeshStandardMaterial({vertexColors:true,metalness:.35,roughness:.4});
+ let baseGeo=null;
+ tmpl.traverse(o=>{if(o.isMesh&&o.material){
+  if(o.material.name==='Bordes')o.material=metalMat; // aros/tapa/anilla: metal pulido
+  else if(o.material.name==='Etiqueta'){o.material=labelMat;baseGeo=o.geometry;baseGeo.computeBoundingBox()} // cuerpo: etiqueta a pintar
+ }});
+ if(!baseGeo)return;
+ const bb=baseGeo.boundingBox,yMin=bb.min.y,yMax=bb.max.y,yR=yMax-yMin,topT=yMax-yR*.22,botT=yMin+yR*.12;
+ const smo=x=>{x=Math.min(1,Math.max(0,x));return x*x*(3-2*x)},silver=new THREE.Color(0xe7ebec);
+ const pos=baseGeo.attributes.position,n=pos.count;
+ const colorCache=[0x2f9e5b,0x1f6f5c,0x6aa84f].map(hex=>{
+  const col=new THREE.Color(hex),colors=new Float32Array(n*3),tmp=new THREE.Color();
+  for(let k=0;k<n;k++){const y=pos.getY(k);
+   if(y>topT)tmp.copy(col).lerp(silver,smo((y-topT)/(yMax-topT))); // transición al domo metálico
+   else if(y<botT)tmp.copy(col).lerp(silver,smo((botT-y)/(botT-yMin))); // transición a la base
+   else tmp.copy(col); // cuerpo pintado
+   colors[k*3]=tmp.r;colors[k*3+1]=tmp.g;colors[k*3+2]=tmp.b}
+  return colors});
+ for(let i=0;i<N;i++){
+  const inst=tmpl.clone(true);
+  inst.traverse(o=>{if(o.isMesh&&o.material===labelMat){o.geometry=o.geometry.clone();o.geometry.setAttribute('color',new THREE.BufferAttribute(colorCache[i%3],3))}});
+  const wrap=new THREE.Group();wrap.add(inst);wrap.scale.setScalar(scl);world.add(wrap);
+  const s=Math.sin(i*12.9898)*43758.5453,f=s-Math.floor(s);
+  cans.push({m:wrap,a:i*2.4,r:1.9+(i%3)*.45,y:-.5+f*2.8,sp:.12+f*.12,ph:i});
+ }
+},undefined,()=>{});
+// hojas
+const leafG=new THREE.ShapeGeometry((()=>{const s=new THREE.Shape();s.moveTo(0,0);s.quadraticCurveTo(.45,.55,0,1.4);s.quadraticCurveTo(-.45,.55,0,0);return s})(),8);
+const leafM=[0x3f9b53,0x2f7d46,0x78b95a].map(c=>new THREE.MeshStandardMaterial({color:c,roughness:.7,side:THREE.DoubleSide}));
+const leaves=[];for(let i=0;i<(mobile?10:16);i++){const m=new THREE.Mesh(leafG,leafM[i%3]);const a=-2.6+i*.34,r=2.2+(i%3)*.55;
+m.position.set(Math.cos(a)*r,-H/2,Math.sin(a)*r*.6-.4);m.rotation.y=-a+Math.PI/2+(i%2?.4:-.4);m.scale.setScalar(0);world.add(m);leaves.push({m,b:Math.sin(i*3)*.3,s:.8+(i%4)*.25,ph:i})}
+
+// cámara y escena por progreso del scroll
+const D=[[0,3.5,8.6,0,.1,0,1.7,0,1],[2.2,4.9,6.8,0,.6,0,1.6,0,1],[-1,2.6,9,0,.2,0,3.4,0,.7],[0,2.4,9.6,0,.3,0,-3.4,0,.7],[0,3.2,10,0,.3,0,1.6,0,1],[0,3,12,0,.5,0,0,0,.9]];
+const MG=[[0,-1.2,1],[0,-1.3,1],[0,-.6,.55],[0,-.6,.55],[0,-1.1,1],[0,-.8,.9]];
+const KEY=D.map((k,i)=>{k=k.slice();if(mobile){k[2]*=1.2;k[6]=MG[i][0];k[7]=MG[i][1];k[8]=MG[i][2]}return k});KEY.push(KEY[5]);
+let K=[0,.15,.3,.5,.7,1,1],pT=0,pS=0;
+const sm=x=>{x=Math.min(1,Math.max(0,x));return x*x*(3-2*x)},cl=x=>Math.min(1,Math.max(0,x));
+function calcK(){const s=[...document.querySelectorAll("[data-s]")],mx=Math.max(1,root.scrollHeight-innerHeight);
+K=s.map((e,i)=>cl(e.offsetTop/mx));K.push(1);for(let i=1;i<K.length;i++)K[i]=Math.max(K[i],K[i-1]+.002);
+}
+function size(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();calcK()}
+ScrollTrigger.create({start:0,end:"max",onUpdate:s=>{pT=s.progress;document.querySelector(".scroll").style.opacity=pT>.03?0:1}});
+ScrollTrigger.addEventListener("refresh",calcK);addEventListener("resize",size);size();
+const P0=new THREE.Vector3(),C=new THREE.Vector3(),P2=new THREE.Vector3();
+function render(t){
+ const e=reduce?0:t;pS=reduce?0:pS+(pT-pS)*.09;
+ let i=0;while(i<5&&pS>=K[i+1])i++;
+ const u=sm((pS-K[i])/((K[i+1]-K[i])||.002)),A=KEY[i],B=KEY[i+1],v=A.map((a,j)=>a+(B[j]-a)*u);
+ cam.position.set(v[0],v[1],v[2]);cam.lookAt(v[3],v[4],v[5]);
+ world.position.set(v[6],v[7],0);world.scale.setScalar(v[8]);
+ drum.rotation.y=pS*Math.PI*4+e*.12;
+ const kk=K[1]-K[0],o=sm((pS-K[0]-kk*.05)/(kk*.25||.01)),cc=sm((pS-K[3]-(K[4]-K[3])*.3)/((K[4]-K[3])*.5||.01));cap.rotation.x=-2.25*o*(1-cc);
+ const qs=K[0]+(K[1]-K[0])*.3,qe=K[1]+(K[2]-K[1])*.85;
+ cans.forEach((c,n)=>{
+  const w=(pS-qs)/((qe-qs)||.01),q=sm(cl((w-n/N*.5)/.5));
+  const an=c.a+e*c.sp;P0.set(Math.cos(an)*c.r,c.y+Math.sin(e*.8+c.ph)*.12,Math.sin(an)*c.r);
+  C.set(P0.x*.12,4.8,P0.z*.12);
+  P2.set(((n%3)-1)*.09,-1.15+(n%6)*.3,(((n*2)%3)-1)*.09);
+  const b=1-q;c.m.position.set(b*b*P0.x+2*q*b*C.x+q*q*P2.x,b*b*P0.y+2*q*b*C.y+q*q*P2.y,b*b*P0.z+2*q*b*C.z+q*q*P2.z);
+  c.m.rotation.set((c.ph*.7+e*.5)*(1-q)+q*6.2832,e*.3*(1-q),Math.sin(c.ph)*.3*(1-q));
+ });
+ const lg=sm((pS-K[3]-(K[4]-K[3])*.4)/((K[5]-K[3])*.6||.01));
+ leaves.forEach(l=>{const s=l.s*cl(lg*1.4-l.ph*.03);l.m.scale.set(s,s*(1+Math.sin(e*1.2+l.ph)*.03),s);l.m.rotation.z=l.b+Math.sin(e*.9+l.ph)*.06});
+ const mid=(a,b)=>(K[a]+K[b])/2,dim=sm((pS-mid(1,2))/((K[2]-mid(1,2))||.01))-sm((pS-mid(3,4))/((K[4]-mid(3,4))||.01));
+ cv.style.opacity=1-.72*cl(dim);root.style.setProperty("--g",sm((pS-K[3])/((K[4]-K[3])||.01)).toFixed(3));
+ R.render(S,cam);
+}
+if(reduce){root.classList.add("static");render(0);addEventListener("resize",()=>render(0))}
+else{let f=0;const tick=t=>{if(document.hidden)return;if(mobile&&(f++&1))return;render(t)};gsap.ticker.add(tick);
+ addEventListener("pagehide",()=>{gsap.ticker.remove(tick);ScrollTrigger.getAll().forEach(s=>s.kill());R.dispose()},{once:true})}
+})();
+</script>
+</body>
+</html>
