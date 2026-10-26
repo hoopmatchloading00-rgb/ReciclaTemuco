@@ -9,23 +9,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <style>
-:root{--bg1:#f0fdf4;--bg2:#dcfce7;--ink:#134e27;--mute:#4b5563;--card:rgba(255,255,255,.9);--pri:#15803d;--pri2:#0b3318;--line:#dcfce7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#0f1d16;--bg2:#163222;--ink:#eef3e8;--mute:#b4c9b9;--card:rgba(18,38,27,.86);--pri:#2e9b5a;--line:rgba(238,243,232,.16)}}
+:root{--bg1:#f0fdf4;--bg2:#dcfce7;--ink:#134e27;--mute:#4b5563;--card:rgba(255,255,255,.9);--pri:#15803d;--pri2:#0b3318;--line:#dcfce7;--glass:rgba(255,255,255,.55);--glassb:rgba(255,255,255,.6);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#0f1d16;--bg2:#163222;--ink:#eef3e8;--mute:#b4c9b9;--card:rgba(18,38,27,.86);--pri:#2e9b5a;--line:rgba(238,243,232,.16);--glass:rgba(16,34,24,.5);--glassb:rgba(238,243,232,.14)}}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;font:400 1.05rem/1.6 "DM Sans",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;overflow-x:hidden}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.08;margin:0 0 .5em;letter-spacing:-.01em}
+body{margin:0;font:400 1.05rem/1.6 "Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;overflow-x:hidden}
+h1,h2,h3{line-height:1.08;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
 h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
 h3{font-size:1.3rem;font-weight:600}
 p{margin:0 0 1em}
 a{color:inherit}
 :focus-visible{outline:3px solid #f2b705;outline-offset:3px;border-radius:6px}
-#glow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:var(--g,0);background:radial-gradient(ellipse at 70% 40%,rgba(190,235,160,.55),transparent 60%),radial-gradient(ellipse at 20% 90%,rgba(120,200,120,.35),transparent 55%)}
+#glow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 70% 40%,rgba(190,235,160,.55),transparent 60%),radial-gradient(ellipse at 20% 90%,rgba(120,200,120,.35),transparent 55%)}
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 main,header{position:relative;z-index:2}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 5vw;background:var(--card);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.brand{font:800 1.1rem Fraunces,serif;text-decoration:none;letter-spacing:.02em}.brand b{color:var(--pri)}
+.brand{font:800 1.1rem "Plus Jakarta Sans",system-ui,sans-serif;text-decoration:none;letter-spacing:.02em}.brand b{color:var(--pri)}
 .nav nav{display:none;gap:22px}.nav nav a{text-decoration:none;font-weight:500;font-size:.95rem}.nav nav a:hover{color:var(--pri)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s}
 .btn:hover{transform:translateY(-2px)}
@@ -50,19 +50,18 @@ main,header{position:relative;z-index:2}
 .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(0,0,0,.45)}
 .card p{color:var(--mute);margin:0}
 .ic{width:60px;height:60px;color:var(--pri);margin-bottom:14px;animation:fl 4s ease-in-out infinite}
-.n{font:800 .85rem "DM Sans";letter-spacing:.14em;color:var(--pri);display:block;margin-bottom:6px}
+.n{font:800 .85rem "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.14em;color:var(--pri);display:block;margin-bottom:6px}
 @keyframes fl{50%{transform:translateY(-5px)}}
 .cta-sc{justify-content:center;text-align:center}
 .cta-sc .t{max-width:680px;margin:0 auto}.cta-sc .cta{justify-content:center}
 .info{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin:1.6em 0 1em;color:var(--mute)}
-.slogan{font:600 1.4rem Fraunces,serif;color:var(--pri)}
+.slogan{font:600 1.4rem "Plus Jakarta Sans",system-ui,sans-serif;color:var(--pri)}
 .fb{display:none}
 .nogl .fb,.static .fb{display:block;position:absolute;right:6vw;bottom:12vh;width:min(38vw,260px)}
 .nogl #gl{display:none}
 footer{padding:20px 6vw 30px;text-align:center;font-size:.85rem;color:var(--mute);position:relative;z-index:2}
 @media(min-width:800px){.nav nav{display:flex}.grid{grid-template-columns:repeat(3,1fr)}.panel{background:none;backdrop-filter:none;padding:0;border-radius:0}.t{padding-left:2vw}}
 @media(max-width:799px){.fb{display:none!important}}
-body,h1,h2,h3,.brand,.slogan,.n{font-family:"Plus Jakarta Sans",system-ui,sans-serif}
 h1,h2{letter-spacing:-.02em}
 .wa{background:#25d366;color:#073b1a;box-shadow:0 8px 24px -8px rgba(37,211,102,.8)}.wa:hover{background:#1fbd5a}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
@@ -80,11 +79,29 @@ h1,h2{letter-spacing:-.02em}
 @media(min-width:800px){.g2{grid-template-columns:1fr 1fr}.mm,.bar{display:none}.nav>.btn.wa{display:inline-flex}}
 @media(max-width:799px){footer{padding-bottom:96px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+#ld{position:fixed;left:0;right:0;top:0;height:3px;z-index:9;pointer-events:none;transition:opacity .5s .25s}
+#ld i{display:block;height:100%;background:linear-gradient(90deg,#84cc16,var(--pri));transform:scaleX(.08);transform-origin:0 50%;transition:transform .35s ease-out}
+#ld.done{opacity:0}
+@media(max-width:799px){
+.hero{padding:76px 4vw 0}
+.story{align-items:flex-end;padding:0 4vw calc(86px + env(safe-area-inset-bottom,0px))}
+.hero .panel,.story .panel{width:100%;max-width:none;padding:16px 18px;border-radius:22px;background:var(--glass);-webkit-backdrop-filter:blur(12px) saturate(1.25);backdrop-filter:blur(12px) saturate(1.25);border:1px solid var(--glassb);box-shadow:0 12px 32px -16px rgba(11,51,24,.45)}
+.hero h1{font-size:clamp(1.65rem,7.4vw,2.1rem);margin-bottom:.35em}
+.hero .lead,.story .lead{font-size:.93rem;line-height:1.45;margin-bottom:0}
+.hero .lead{margin-bottom:.2em}
+.hero .chips{gap:6px;margin-bottom:10px}.hero .chip{font-size:.62rem;padding:4px 9px;letter-spacing:.03em}
+.hero .cta{flex-wrap:nowrap;gap:8px;margin-top:12px}
+.hero .btn{flex:1 1 0;min-height:44px;padding:8px 10px;font-size:.84rem;line-height:1.15;text-align:center}
+.story h2{font-size:clamp(1.35rem,6vw,1.7rem);margin-bottom:.35em}
+.story .eyebrow{font-size:.7rem;margin:0 0 6px}
+.hero .scroll{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
 </style>
 </head>
 <body>
 <div id="glow"></div>
 <canvas id="gl" aria-hidden="true"></canvas>
+<div id="ld" aria-hidden="true"><i></i></div>
 <header class="nav">
   <a class="brand" href="#inicio">RECILAT <b>TCO</b></a>
   <nav aria-label="Principal"><a href="#como">Cómo funciona</a><a href="#para">Para quién</a><a href="#beneficios">Beneficios</a><a href="#aceptamos">Qué aceptamos</a><a href="#contacto">Contacto</a></nav>
@@ -92,18 +109,18 @@ h1,h2{letter-spacing:-.02em}
   <details class="mm"><summary aria-label="Abrir menú">☰ Menú</summary><div class="mp"><a href="#como">Cómo funciona</a><a href="#para">Para quién</a><a href="#beneficios">Beneficios</a><a href="#aceptamos">Qué aceptamos</a><a href="#contacto">Contacto</a></div></details>
 </header>
 <main>
-<section id="inicio" data-s class="sc top">
+<section id="inicio" data-s class="sc top hero">
   <div class="t panel">
     <p class="chips rv"><span class="chip">Cobertura en Temuco y alrededores</span><span class="chip lime">Contenedor 100 % gratuito</span></p>
     <h1 class="rv">Dale una nueva vida al aluminio.</h1>
     <p class="lead rv">Reciclamos latas y papel de aluminio para construir un entorno más limpio en Temuco y sus alrededores.</p>
     <div class="cta rv"><a class="btn pri" data-wa href="https://wa.me/56962042769">Quiero reciclar</a><a class="btn sec" href="#como">Conoce cómo funciona</a></div>
   </div>
-  <svg class="fb" viewBox="0 0 200 260" role="img" aria-label="Tambor metálico verde de RECILAT TCO"><ellipse cx="100" cy="236" rx="80" ry="12" fill="#000" opacity=".15"/><rect x="25" y="30" width="150" height="200" rx="14" fill="#1f7a43"/><ellipse cx="100" cy="30" rx="75" ry="16" fill="#0f3d26"/><ellipse cx="100" cy="30" rx="75" ry="16" fill="none" stroke="#b9c2c4" stroke-width="4"/><text x="100" y="135" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#fff">RECILAT</text><text x="100" y="160" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#bff0c4">TCO</text></svg>
+  <svg class="fb" viewBox="0 0 200 260" role="img" aria-label="Tambor metálico verde de RECILAT TCO"><ellipse cx="100" cy="236" rx="80" ry="12" fill="#000" opacity=".15"/><rect x="25" y="30" width="150" height="200" rx="14" fill="#1f7a43"/><ellipse cx="100" cy="30" rx="75" ry="16" fill="#0f3d26"/><ellipse cx="100" cy="30" rx="75" ry="16" fill="none" stroke="#b9c2c4" stroke-width="4"/><text x="100" y="135" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="#fff">RECILAT</text><text x="100" y="160" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="#bff0c4">TCO</text></svg>
   <div class="scroll" aria-hidden="true"><span></span>Desliza</div>
 </section>
 
-<section data-s class="sc top">
+<section data-s class="sc top story">
   <div class="t panel">
     <p class="eyebrow rv">El recorrido de una lata</p>
     <h2 class="rv">Cada lata cuenta.</h2>
@@ -137,7 +154,7 @@ h1,h2{letter-spacing:-.02em}
 
 <section id="aceptamos" class="sc plain"><div class="wide"><div class="head"><p class="eyebrow rv">Clasificación</p><h2 class="rv">Qué aceptamos en el contenedor.</h2><p class="lead rv">Un solo contenedor para estos dos materiales.</p></div><div class="grid g2"><article class="card mat rv"><h3>Latas de bebidas</h3><p>Latas de aluminio de cervezas, jugos y gaseosas.</p><span class="chip lime">Aluminio</span></article><article class="card mat rv"><h3>Papel de aluminio</h3><p>Papel de aluminio usado.</p><span class="chip lime">Aluminio</span></article></div><div class="warn rv"><strong>Solo latas y papel aluminio en un solo contenedor</strong><span>Te compartimos las indicaciones para depositar el material.</span></div><p class="rv"><a class="lnk" data-wa data-m="Hola, tengo una duda sobre un material de reciclaje." href="https://wa.me/56962042769">¿Dudas con un material? Pregúntanos por WhatsApp →</a></p></div></section>
 
-<section data-s class="sc top">
+<section data-s class="sc top story">
   <div class="t panel">
     <p class="eyebrow rv">El resultado de reciclar</p>
     <h2 class="rv">Un cambio pequeño. Un futuro más limpio.</h2>
@@ -174,7 +191,7 @@ if(!ok){root.classList.add("nogl");return}
 gsap.registerPlugin(ScrollTrigger);
 if(!reduce)gsap.utils.toArray(".rv").forEach(el=>gsap.from(el,{y:30,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%",toggleActions:"play none none reverse"}}));
 
-const cv=document.getElementById("gl");
+const cv=document.getElementById("gl"),glow=document.getElementById("glow");
 const R=new THREE.WebGLRenderer({canvas:cv,antialias:!mobile,alpha:true,powerPreference:"low-power"});
 R.setPixelRatio(Math.min(devicePixelRatio,mobile?1.5:2));
 R.outputEncoding=THREE.sRGBEncoding;
@@ -193,10 +210,10 @@ const drum=new THREE.Group();world.add(drum);
 function recy(x,cx,cy,r,col){x.save();x.translate(cx,cy);x.strokeStyle=x.fillStyle=col;x.lineWidth=r*.24;x.lineCap="round";
 for(let k=0;k<3;k++){x.save();x.rotate(k*2.094);x.beginPath();x.arc(0,0,r,-1.95,-.45);x.stroke();
 const a=-.35;x.translate(r*Math.cos(a),r*Math.sin(a));x.rotate(a+Math.PI);x.beginPath();x.moveTo(0,-r*.34);x.lineTo(r*.3,r*.1);x.lineTo(-r*.3,r*.1);x.fill();x.restore()}x.restore()}
-const W=2048,HT=944,lc=document.createElement('canvas');lc.width=W;lc.height=HT;
+const W=2048,HT=944,LS=mobile?.5:1,lc=document.createElement('canvas');lc.width=W*LS;lc.height=HT*LS;
 function leaf(x,px,py,a,len,col){x.save();x.translate(px,py);x.rotate(a);x.fillStyle=col;x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(len*.4,-len*.22,len,0);x.quadraticCurveTo(len*.4,len*.22,0,0);x.fill();x.restore()}
 function canI(x,cx,cy,w,h,r){x.save();x.translate(cx,cy);x.rotate(r);x.lineWidth=6;x.strokeStyle='#fff';x.fillStyle='rgba(255,255,255,.14)';x.beginPath();x.rect(-w/2,-h/2,w,h);x.fill();x.stroke();x.beginPath();x.ellipse(0,-h/2,w/2,w*.16,0,0,7);x.fill();x.stroke();x.lineWidth=3;x.beginPath();x.ellipse(0,-h/2,w*.3,w*.08,0,0,7);x.stroke();x.lineWidth=5;x.globalAlpha=.6;x.beginPath();x.moveTo(-w*.25,-h*.3);x.lineTo(-w*.25,h*.3);x.stroke();x.restore()}
-(()=>{const x=lc.getContext('2d'),g=x.createLinearGradient(0,0,0,HT);g.addColorStop(0,'#15843a');g.addColorStop(1,'#0a5226');x.fillStyle=g;x.fillRect(0,0,W,HT);
+(()=>{const x=lc.getContext('2d');x.scale(LS,LS);const g=x.createLinearGradient(0,0,0,HT);g.addColorStop(0,'#15843a');g.addColorStop(1,'#0a5226');x.fillStyle=g;x.fillRect(0,0,W,HT);
 const F=s=>`900 ${s}px Arial Black, Arial, sans-serif`;
 [512,1536].forEach(cx=>{
 [-1,1].forEach(s=>{for(let k=0;k<7;k++){const t=k/6,px=cx+s*(255+16*Math.sin(t*4)),py=120+t*340,u=k%2;leaf(x,px,py,s>0?-1.1:-Math.PI+1.1,95,u?'#59c02c':'#82d93f');leaf(x,px,py,s>0?-2:-Math.PI+2,80,u?'#82d93f':'#59c02c')}
@@ -212,12 +229,17 @@ canI(x,cx-255,832,26,46,0);x.textAlign='left';x.font='700 24px Arial, sans-serif
 x.strokeStyle='rgba(255,255,255,.35)';x.lineWidth=3;[-108,108].forEach(d=>{x.beginPath();x.moveTo(cx+d,800);x.lineTo(cx+d,868);x.stroke()});
 recy(x,cx,834,28,'#6ccc33');leaf(x,cx+128,850,-1.1,48,'#8fe05a');x.fillText('Damos una',cx+168,818);x.fillText('nueva vida',cx+168,846);x.fillText('a las latas',cx+168,874)});
 })();
-const lt=new THREE.CanvasTexture(lc);lt.encoding=THREE.sRGBEncoding;lt.anisotropy=4;
+const lt=new THREE.CanvasTexture(lc);lt.encoding=THREE.sRGBEncoding;lt.anisotropy=mobile?2:4;
 const H=2.9,lidY=H/2-.07;
 const metal=new THREE.MeshStandardMaterial({color:0xd5dadc,metalness:1,roughness:.22});
+// cuerpo procedural temporal: el tambor existe desde el primer frame y se desvanece cuando llega el .glb real
+const phM=[0x15843a,0xd7dbdc,0x0a3c1c].map((c,i)=>new THREE.MeshStandardMaterial({color:c,metalness:i===1?.9:.45,roughness:i===1?.3:.4,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}));
+let phd=new THREE.Mesh(new THREE.CylinderGeometry(.95,.95,H-.072,mobile?40:56),phM),phT=0;phd.position.y=-.036;drum.add(phd);
+const killPH=()=>{if(!phd)return;drum.remove(phd);phd.geometry.dispose();phM.forEach(m=>m.dispose());phd=null};
+const ld=document.getElementById('ld'),ldi=ld&&ld.firstElementChild,ldp=f=>{if(ldi)ldi.style.transform='scaleX('+f+')'},ldd=()=>{ldp(1);if(ld)ld.classList.add('done')};
 // --- tambor real (modelo glTF descargado) pintado para igualar el tambor físico de la foto ---
 const loader=new THREE.GLTFLoader();
-loader.load('stainless_steel_oil_drum.glb',gltf=>{
+loader.load('stainless_steel_oil_drum.glb',gltf=>{ldd();
  const root=gltf.scene;root.updateMatrixWorld(true);
  let mesh=null;root.traverse(o=>{if(o.isMesh)mesh=o});
  if(!mesh)return;
@@ -242,9 +264,10 @@ loader.load('stainless_steel_oil_drum.glb',gltf=>{
  root.position.sub(center);
  const wrap=new THREE.Group();wrap.add(root);wrap.scale.setScalar(H/size.y);
  drum.add(wrap);
-},undefined,()=>{});
+ if(reduce){killPH();render(0)}else{phM.forEach(m=>{m.transparent=true;m.depthWrite=false});phT=performance.now()}
+},p=>ldp(p.lengthComputable&&p.total?.08+.9*p.loaded/p.total:.6),ldd);
 // etiqueta envolvente (el diseño real de RECILAT TCO), deja asomar el metal del modelo arriba/abajo
-drum.add(new THREE.Mesh(new THREE.CylinderGeometry(.965,.965,H*.88,64,1,true),new THREE.MeshPhysicalMaterial({map:lt,metalness:.3,roughness:.32,clearcoat:.7,clearcoatRoughness:.15})).translateY(-H*.02));
+drum.add(new THREE.Mesh(new THREE.CylinderGeometry(.965,.965,H*.88,64,1,true),(mobile?new THREE.MeshStandardMaterial({map:lt,metalness:.3,roughness:.25}):new THREE.MeshPhysicalMaterial({map:lt,metalness:.3,roughness:.32,clearcoat:.7,clearcoatRoughness:.15}))).translateY(-H*.02));
 // tapa circular con pestaña: se abre con el scroll
 const cap=new THREE.Group();cap.position.set(0,lidY+.025,-.33);drum.add(cap);
 const disc=new THREE.Mesh(new THREE.CylinderGeometry(.36,.36,.03,40),new THREE.MeshStandardMaterial({color:0xeef1f2,metalness:.9,roughness:.3}));disc.position.z=.33;cap.add(disc);
@@ -289,38 +312,44 @@ canLoader.load('lata_para_mockups.glb',gltf=>{
    else tmp.copy(col); // cuerpo pintado
    colors[k*3]=tmp.r;colors[k*3+1]=tmp.g;colors[k*3+2]=tmp.b}
   return colors});
+ // 3 geometrías base (una por tono) que comparten los buffers de posición/normal/uv; las 8-14 instancias las reutilizan sin clonar
+ const geoC=colorCache.map(c3=>{const g=new THREE.BufferGeometry();if(baseGeo.index)g.setIndex(baseGeo.index);for(const k in baseGeo.attributes)g.setAttribute(k,baseGeo.attributes[k]);g.setAttribute('color',new THREE.BufferAttribute(c3,3));return g});
  for(let i=0;i<N;i++){
   const inst=tmpl.clone(true);
-  inst.traverse(o=>{if(o.isMesh&&o.material===labelMat){o.geometry=o.geometry.clone();o.geometry.setAttribute('color',new THREE.BufferAttribute(colorCache[i%3],3))}});
+  inst.traverse(o=>{if(o.isMesh&&o.material===labelMat){o.geometry=geoC[i%3]}});
   const wrap=new THREE.Group();wrap.add(inst);wrap.scale.setScalar(scl);world.add(wrap);
   const s=Math.sin(i*12.9898)*43758.5453,f=s-Math.floor(s);
-  cans.push({m:wrap,a:i*2.4,r:1.9+(i%3)*.45,y:-.5+f*2.8,sp:.12+f*.12,ph:i});
+  cans.push({m:wrap,a:i*2.4,r:(1.9+(i%3)*.45)*(mobile?.68:1),y:-.5+f*2.8,sp:.12+f*.12,ph:i});
  }
+ if(reduce)render(0);
 },undefined,()=>{});
 // hojas
 const leafG=new THREE.ShapeGeometry((()=>{const s=new THREE.Shape();s.moveTo(0,0);s.quadraticCurveTo(.45,.55,0,1.4);s.quadraticCurveTo(-.45,.55,0,0);return s})(),8);
 const leafM=[0x3f9b53,0x2f7d46,0x78b95a].map(c=>new THREE.MeshStandardMaterial({color:c,roughness:.7,side:THREE.DoubleSide}));
-const leaves=[];for(let i=0;i<(mobile?10:16);i++){const m=new THREE.Mesh(leafG,leafM[i%3]);const a=-2.6+i*.34,r=2.2+(i%3)*.55;
+const leaves=[];for(let i=0;i<(mobile?10:16);i++){const m=new THREE.Mesh(leafG,leafM[i%3]);const a=-2.6+i*.34,r=(2.2+(i%3)*.55)*(mobile?.7:1);
 m.position.set(Math.cos(a)*r,-H/2,Math.sin(a)*r*.6-.4);m.rotation.y=-a+Math.PI/2+(i%2?.4:-.4);m.scale.setScalar(0);world.add(m);leaves.push({m,b:Math.sin(i*3)*.3,s:.8+(i%4)*.25,ph:i})}
 
 // cámara y escena por progreso del scroll
 const D=[[0,3.5,8.6,0,.1,0,1.7,0,1],[2.2,4.9,6.8,0,.6,0,1.6,0,1],[-1,2.6,9,0,.2,0,3.4,0,.7],[0,2.4,9.6,0,.3,0,-3.4,0,.7],[0,3.2,10,0,.3,0,1.6,0,1],[0,3,12,0,.5,0,0,0,.9]];
-const MG=[[0,-1.2,1],[0,-1.3,1],[0,-.6,.55],[0,-.6,.55],[0,-1.1,1],[0,-.8,.9]];
-const KEY=D.map((k,i)=>{k=k.slice();if(mobile){k[2]*=1.2;k[6]=MG[i][0];k[7]=MG[i][1];k[8]=MG[i][2]}return k});KEY.push(KEY[5]);
-let K=[0,.15,.3,.5,.7,1,1],pT=0,pS=0;
+// móvil: cámara (x,y,z + punto de mira) y mundo (x,y,escala) por escena. Hero: texto arriba y tambor abajo; narrativas: texto abajo y tambor/latas en la ventana libre
+const DM=[[0,3.2,10.6,0,.1,0],[1.2,5,6.8,0,.4,0],[-1,2.6,10.8,0,.2,0],[0,2.4,11.5,0,.3,0],[0,3.4,10,0,.3,0],[0,3,12.5,0,.5,0]];
+const MG=[[0,-1.7,1],[0,.15,1],[0,-.4,.7],[0,-.4,.7],[0,1.1,1],[0,-.8,.9]];
+const KEY=D.map((k,i)=>{k=k.slice();if(mobile){k.splice(0,6,...DM[i]);k[6]=MG[i][0];k[7]=MG[i][1];k[8]=MG[i][2]}return k});KEY.push(KEY[5]);
+let K=[0,.15,.3,.5,.7,1,1],pT=0,pS=0,camK=1,gO='',cO='';
 const sm=x=>{x=Math.min(1,Math.max(0,x));return x*x*(3-2*x)},cl=x=>Math.min(1,Math.max(0,x));
 function calcK(){const s=[...document.querySelectorAll("[data-s]")],mx=Math.max(1,root.scrollHeight-innerHeight);
 K=s.map((e,i)=>cl(e.offsetTop/mx));K.push(1);for(let i=1;i<K.length;i++)K[i]=Math.max(K[i],K[i-1]+.002);
 }
-function size(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();calcK()}
+function size(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();camK=mobile?Math.min(1.25,Math.max(.8,.5/cam.aspect)):1;calcK()}
 ScrollTrigger.create({start:0,end:"max",onUpdate:s=>{pT=s.progress;document.querySelector(".scroll").style.opacity=pT>.03?0:1}});
-ScrollTrigger.addEventListener("refresh",calcK);addEventListener("resize",size);size();
+ScrollTrigger.addEventListener("refresh",calcK);let lw=innerWidth,lh=innerHeight;addEventListener("resize",()=>{if(mobile&&innerWidth===lw&&Math.abs(innerHeight-lh)<160)return;lw=innerWidth;lh=innerHeight;size()});size();
 const P0=new THREE.Vector3(),C=new THREE.Vector3(),P2=new THREE.Vector3();
 function render(t){
- const e=reduce?0:t;pS=reduce?0:pS+(pT-pS)*.09;
+ const e=reduce?0:t;pS=reduce?0:pS+(pT-pS)*(1-Math.pow(mobile?.89:.91,Math.min(gsap.ticker.deltaRatio(),3)));
+ if(phd&&phT){const f=1-(performance.now()-phT)/500;if(f<=0)killPH();else phM.forEach(m=>m.opacity=f)}
  let i=0;while(i<5&&pS>=K[i+1])i++;
  const u=sm((pS-K[i])/((K[i+1]-K[i])||.002)),A=KEY[i],B=KEY[i+1],v=A.map((a,j)=>a+(B[j]-a)*u);
- cam.position.set(v[0],v[1],v[2]);cam.lookAt(v[3],v[4],v[5]);
+ cam.position.set(v[3]+(v[0]-v[3])*camK,v[4]+(v[1]-v[4])*camK,v[5]+(v[2]-v[5])*camK);cam.lookAt(v[3],v[4],v[5]);
  world.position.set(v[6],v[7],0);world.scale.setScalar(v[8]);
  drum.rotation.y=pS*Math.PI*4+e*.12;
  const kk=K[1]-K[0],o=sm((pS-K[0]-kk*.05)/(kk*.25||.01)),cc=sm((pS-K[3]-(K[4]-K[3])*.3)/((K[4]-K[3])*.5||.01));cap.rotation.x=-2.25*o*(1-cc);
@@ -336,11 +365,11 @@ function render(t){
  const lg=sm((pS-K[3]-(K[4]-K[3])*.4)/((K[5]-K[3])*.6||.01));
  leaves.forEach(l=>{const s=l.s*cl(lg*1.4-l.ph*.03);l.m.scale.set(s,s*(1+Math.sin(e*1.2+l.ph)*.03),s);l.m.rotation.z=l.b+Math.sin(e*.9+l.ph)*.06});
  const mid=(a,b)=>(K[a]+K[b])/2,dim=sm((pS-mid(1,2))/((K[2]-mid(1,2))||.01))-sm((pS-mid(3,4))/((K[4]-mid(3,4))||.01));
- cv.style.opacity=1-.72*cl(dim);root.style.setProperty("--g",sm((pS-K[3])/((K[4]-K[3])||.01)).toFixed(3));
+ const co=(1-.72*cl(dim)).toFixed(3),go=sm((pS-K[3])/((K[4]-K[3])||.01)).toFixed(3);if(co!==cO){cO=co;cv.style.opacity=co}if(go!==gO){gO=go;glow.style.opacity=go}
  R.render(S,cam);
 }
 if(reduce){root.classList.add("static");render(0);addEventListener("resize",()=>render(0))}
-else{let f=0;const tick=t=>{if(document.hidden)return;if(mobile&&(f++&1))return;render(t)};gsap.ticker.add(tick);
+else{const tick=t=>{if(document.hidden)return;render(t)};gsap.ticker.add(tick);
  addEventListener("pagehide",()=>{gsap.ticker.remove(tick);ScrollTrigger.getAll().forEach(s=>s.kill());R.dispose()},{once:true})}
 })();
 </script>
