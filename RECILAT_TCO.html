@@ -172,7 +172,7 @@ h1,h2{letter-spacing:-.02em}
   </div>
 </section>
 </main>
-<footer><strong>RECILAT TCO</strong> · Empresa recicladora de latas y papel de aluminio<br>© 2026 RECILAT TCO · Temuco y alrededores, Chile</footer>
+<footer><strong>RECILAT TCO</strong> · Empresa recicladora de latas y papel de aluminio<br>© 2026 RECILAT TCO · Temuco y alrededores, Chile<br><small>Modelo 3D de flores: <a href="https://sketchfab.com/3d-models/modulo-de-flores-b0e875cb380247aea5f648da6266095c" target="_blank" rel="noopener">“Modulo De Flores”</a> por Lucas Eliel · <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></small></footer>
 <a class="btn wa bar" data-wa data-m="Hola, RECILAT TCO. Quiero solicitar un contenedor gratuito." href="https://wa.me/56962042769">Pedir contenedor gratis por WhatsApp</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -326,8 +326,27 @@ canLoader.load('lata_para_mockups.glb',gltf=>{
 // hojas
 const leafG=new THREE.ShapeGeometry((()=>{const s=new THREE.Shape();s.moveTo(0,0);s.quadraticCurveTo(.45,.55,0,1.4);s.quadraticCurveTo(-.45,.55,0,0);return s})(),8);
 const leafM=[0x3f9b53,0x2f7d46,0x78b95a].map(c=>new THREE.MeshStandardMaterial({color:c,roughness:.7,side:THREE.DoubleSide}));
-const leaves=[];for(let i=0;i<(mobile?10:16);i++){const m=new THREE.Mesh(leafG,leafM[i%3]);const a=-2.6+i*.34,r=(2.2+(i%3)*.55)*(mobile?.7:1);
-m.position.set(Math.cos(a)*r,-H/2,Math.sin(a)*r*.6-.4);m.rotation.y=-a+Math.PI/2+(i%2?.4:-.4);m.scale.setScalar(0);world.add(m);leaves.push({m,b:Math.sin(i*3)*.3,s:.8+(i%4)*.25,ph:i})}
+const leaves=[],mkLeaves=()=>{for(let i=0;i<(mobile?10:16);i++){const m=new THREE.Mesh(leafG,leafM[i%3]);const a=-2.6+i*.34,r=(2.2+(i%3)*.55)*(mobile?.7:1);
+m.position.set(Math.cos(a)*r,-H/2,Math.sin(a)*r*.6-.4);m.rotation.y=-a+Math.PI/2+(i%2?.4:-.4);m.scale.setScalar(0);world.add(m);leaves.push({m,b:Math.sin(i*3)*.3,s:.8+(i%4)*.25,ph:i})}};
+
+// flores (modelo glTF: modulo_de_flores.glb) alrededor del tambor; crecen con el mismo scroll que antes tenían las hojas.
+// Las hojas procedurales (mkLeaves) quedan solo como respaldo si el .glb no carga.
+new THREE.GLTFLoader().load('modulo_de_flores.glb',gltf=>{
+ const fr=gltf.scene;fr.updateMatrixWorld(true);
+ let any=false;fr.traverse(o=>{if(o.isMesh){any=true;if(o.material){o.material.side=THREE.DoubleSide;if(o.material.map)o.material.map.anisotropy=mobile?2:4}}});
+ if(!any)return mkLeaves();
+ const box=new THREE.Box3().setFromObject(fr),c=box.getCenter(new THREE.Vector3()),sz=box.getSize(new THREE.Vector3());
+ fr.position.set(-c.x,-box.min.y,-c.z); // centrado en XZ y con la base en y=0 (pivote al ras del suelo)
+ const unit=new THREE.Group();unit.add(fr);unit.scale.setScalar(1.5/sz.x); // cada módulo mide ~1.5 de ancho
+ const n=mobile?12:16,rs=mobile?.95:1;
+ for(let i=0;i<n;i++){
+  const h=k=>{const s=Math.sin(i*12.9898+k*78.233)*43758.5453;return s-Math.floor(s)},ring=i%2,a=(i>>1)/(n/2)*Math.PI*2+ring*.4+h(1)*.25,r=(1.5+ring*.65+h(2)*.12)*rs;
+  const inst=unit.clone(true);if(i%3===1)inst.scale.x*=-1; // espejo para variar; comparten geometría y material
+  const m=new THREE.Group();m.add(inst);
+  m.position.set(Math.cos(a)*r,-H/2,Math.sin(a)*r);m.rotation.y=-a-Math.PI/2+(h(3)-.5)*.7;m.scale.setScalar(0);world.add(m);
+  leaves.push({m,b:(h(4)-.5)*.08,s:.85+h(5)*.4,ph:i})
+ }
+},undefined,mkLeaves);
 
 // cámara y escena por progreso del scroll
 const D=[[0,3.5,8.6,0,.1,0,1.7,0,1],[2.2,4.9,6.8,0,.6,0,1.6,0,1],[-1,2.6,9,0,.2,0,3.4,0,.7],[0,2.4,9.6,0,.3,0,-3.4,0,.7],[0,3.2,10,0,.3,0,1.6,0,1],[0,3,12,0,.5,0,0,0,.9]];
