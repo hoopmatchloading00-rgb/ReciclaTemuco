@@ -24,9 +24,9 @@ a{color:inherit}
 #glow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 70% 40%,rgba(190,235,160,.55),transparent 60%),radial-gradient(ellipse at 20% 90%,rgba(120,200,120,.35),transparent 55%)}
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 main,header{position:relative;z-index:2}
-.nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 5vw;background:var(--card);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 5vw;background:var(--card);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:20;transition:transform .3s ease}
+.nav.hide{transform:translateY(calc(-100% - env(safe-area-inset-top,0px) - 6px))}
 .brand{font:800 1.1rem "Plus Jakarta Sans",system-ui,sans-serif;text-decoration:none;letter-spacing:.02em}.brand b{color:var(--pri)}
-.nav nav{display:none;gap:22px}.nav nav a{text-decoration:none;font-weight:500;font-size:.95rem}.nav nav a:hover{color:var(--pri)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s}
 .btn:hover{transform:translateY(-2px)}
 .pri{background:var(--pri);color:#fff;box-shadow:0 8px 24px -8px rgba(31,122,67,.7)}.pri:hover{background:#18633a}
@@ -60,7 +60,7 @@ main,header{position:relative;z-index:2}
 .nogl .fb,.static .fb{display:block;position:absolute;right:6vw;bottom:12vh;width:min(38vw,260px)}
 .nogl #gl{display:none}
 footer{padding:20px 6vw 30px;text-align:center;font-size:.85rem;color:var(--mute);position:relative;z-index:2}
-@media(min-width:800px){.nav nav{display:flex}.grid{grid-template-columns:repeat(3,1fr)}.panel{background:none;backdrop-filter:none;padding:0;border-radius:0}.t{padding-left:2vw}}
+@media(min-width:800px){.grid{grid-template-columns:repeat(3,1fr)}.panel{background:none;backdrop-filter:none;padding:0;border-radius:0}.t{padding-left:2vw}}
 @media(max-width:799px){.fb{display:none!important}}
 h1,h2{letter-spacing:-.02em}
 .wa{background:#25d366;color:#073b1a;box-shadow:0 8px 24px -8px rgba(37,211,102,.8)}.wa:hover{background:#1fbd5a}
@@ -72,11 +72,8 @@ h1,h2{letter-spacing:-.02em}
 .plain{min-height:0;padding:56px 6vw}
 .mat{border-left:4px solid #16a34a}.mat .chip{margin-top:12px}
 .warn{margin-top:16px;border-radius:20px;background:#134e27;color:#fff;padding:20px 24px;text-align:center}.warn strong{display:block;font-size:1.05rem;color:#bef264;text-transform:uppercase;letter-spacing:.02em}.warn span{opacity:.9}
-.mm{position:relative}.mm summary{list-style:none;cursor:pointer;min-height:44px;display:grid;place-items:center;padding:0 14px;border:1px solid var(--line);border-radius:12px;font-weight:700;font-size:.9rem}.mm summary::-webkit-details-marker{display:none}
-.mp{position:absolute;right:0;top:52px;display:grid;min-width:210px;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 14px 34px -8px rgba(11,51,24,.25)}.mp a{padding:12px 14px;text-decoration:none;font-weight:600;border-radius:10px}.mp a:hover{background:#dcfce7}
-.nav>.btn.wa{display:none}
 .bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:6;box-shadow:0 14px 34px -4px rgba(11,51,24,.3)}
-@media(min-width:800px){.g2{grid-template-columns:1fr 1fr}.mm,.bar{display:none}.nav>.btn.wa{display:inline-flex}}
+@media(min-width:800px){.g2{grid-template-columns:1fr 1fr}.bar{display:none}}
 @media(max-width:799px){footer{padding-bottom:96px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 #ld{position:fixed;left:0;right:0;top:0;height:3px;z-index:9;pointer-events:none;transition:opacity .5s .25s}
@@ -104,9 +101,7 @@ h1,h2{letter-spacing:-.02em}
 <div id="ld" aria-hidden="true"><i></i></div>
 <header class="nav">
   <a class="brand" href="#inicio">RECILAT <b>TCO</b></a>
-  <nav aria-label="Principal"><a href="#como">Cómo funciona</a><a href="#para">Para quién</a><a href="#beneficios">Beneficios</a><a href="#aceptamos">Qué aceptamos</a><a href="#contacto">Contacto</a></nav>
   <a class="btn wa sm" data-wa href="https://wa.me/56962042769">WhatsApp</a>
-  <details class="mm"><summary aria-label="Abrir menú">☰ Menú</summary><div class="mp"><a href="#como">Cómo funciona</a><a href="#para">Para quién</a><a href="#beneficios">Beneficios</a><a href="#aceptamos">Qué aceptamos</a><a href="#contacto">Contacto</a></div></details>
 </header>
 <main>
 <section id="inicio" data-s class="sc top hero">
@@ -172,7 +167,7 @@ h1,h2{letter-spacing:-.02em}
   </div>
 </section>
 </main>
-<footer><strong>RECILAT TCO</strong> · Empresa recicladora de latas y papel de aluminio<br>© 2026 RECILAT TCO · Temuco y alrededores, Chile<br><small>Modelo 3D de flores: <a href="https://sketchfab.com/3d-models/modulo-de-flores-b0e875cb380247aea5f648da6266095c" target="_blank" rel="noopener">“Modulo De Flores”</a> por Lucas Eliel · <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></small></footer>
+<footer><strong>RECILAT TCO</strong> · Empresa recicladora de latas y papel de aluminio<br>© 2026 RECILAT TCO · Temuco y alrededores, Chile<br><small>Modelos 3D (<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>): <a href="https://sketchfab.com/3d-models/stainless-steel-oil-drum-7020e9758ebe45899d8bd7e01dfda15d" target="_blank" rel="noopener">“Stainless steel oil drum”</a> por mellais · <a href="https://sketchfab.com/3d-models/lata-para-mockups-7a1bda2bef0049d8a9d85652c363ce60" target="_blank" rel="noopener">“Lata para mockups”</a> por Felipe Garcia · <a href="https://sketchfab.com/3d-models/modulo-de-flores-b0e875cb380247aea5f648da6266095c" target="_blank" rel="noopener">“Modulo De Flores”</a> por Lucas Eliel</small></footer>
 <a class="btn wa bar" data-wa data-m="Hola, RECILAT TCO. Quiero solicitar un contenedor gratuito." href="https://wa.me/56962042769">Pedir contenedor gratis por WhatsApp</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -183,8 +178,12 @@ h1,h2{letter-spacing:-.02em}
 (()=>{
 const MSG="Hola, quiero reciclar con RECILAT TCO. Me gustaría información sobre un tambor gratuito para mi comunidad o negocio en Temuco.";
 document.querySelectorAll("[data-wa]").forEach(a=>{a.href="https://wa.me/56962042769?text="+encodeURIComponent(a.dataset.m||MSG);a.target="_blank";a.rel="noopener"});
-document.querySelectorAll(".mp a").forEach(a=>a.addEventListener("click",()=>a.closest("details").removeAttribute("open")));
 const root=document.documentElement,reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,mobile=innerWidth<800;
+// encabezado: enlaces internos con scroll suave (también el botón "Conoce cómo funciona") y barra que se oculta al bajar y reaparece al subir
+const nav=document.querySelector(".nav");
+document.addEventListener("click",ev=>{const a=ev.target.closest&&ev.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute("href").slice(1),t=id&&document.getElementById(id);if(!t)return;ev.preventDefault();scrollTo({top:Math.max(0,t.getBoundingClientRect().top+scrollY-(t.hasAttribute("data-s")?0:16)),behavior:reduce?"auto":"smooth"});try{history.replaceState(null,"","#"+id)}catch(e){}});
+let ly=scrollY,tk=false;
+addEventListener("scroll",()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{tk=false;const y=scrollY,d=y-ly;if(y<80||d<-6)nav.classList.remove("hide");else if(d>6)nav.classList.add("hide");if(Math.abs(d)>6)ly=y})},{passive:true});
 let ok=!!(window.THREE&&window.THREE.GLTFLoader&&window.gsap&&window.ScrollTrigger);
 try{const c=document.createElement("canvas");ok=ok&&!!(c.getContext("webgl")||c.getContext("experimental-webgl"))}catch(e){ok=false}
 if(!ok){root.classList.add("nogl");return}
